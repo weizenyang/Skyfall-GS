@@ -12,7 +12,7 @@
     <a href="https://hubert0527.github.io/"><strong>Chieh Hubert Lin</strong></a> ·
     <a href="https://yulunalexliu.github.io/"><strong>Yu-Lun Liu</strong></a>
   </p>
-  <h3 align="center"><a href="https://skyfall-gs.jayinnn.dev/">🌐 Project Page</a> | <a href="https://arxiv.org/abs/2510.15869">📄 Paper</a></h3>
+  <h3 align="center"><a href="https://skyfall-gs.jayinnn.dev/">🌐 Project Page</a> | <a href="https://arxiv.org/abs/2510.15869">📄 Paper</a> | <a href="https://huggingface.co/datasets/jayinnn/Skyfall-GS-datasets">🤗 Datasets</a> | <a href="https://huggingface.co/datasets/jayinnn/Skyfall-GS-eval">🤗 Eval Data</a> | <a href="https://huggingface.co/jayinnn/Skyfall-GS-ply">🤗 PLY Models</a></h3>
 </p>
 <div align="center">
   <a href="https://www.youtube.com/watch?v=zj2-aGSe6ao">
@@ -77,9 +77,11 @@ The datasets required to train the Skyfall-GS model should be placed in the `dat
 
 ### Downloading the Datasets
 
-The JAX and NYC datasets are available for download from Google Drive.
+The JAX and NYC datasets are available for download from Hugging Face or Google Drive.
 
 1.  **Download the zip files:**
+
+    [Download from Hugging Face 🤗](https://huggingface.co/datasets/jayinnn/Skyfall-GS-datasets) *(recommended)*
 
     [Download from Google Drive](https://drive.google.com/drive/folders/1Uugwpf7n5fj7k4UJRBuKUyrmkYcDRScQ?usp=drive_link)
 
@@ -215,6 +217,10 @@ The `scripts/` directory contains scripts for automated training on different da
 Do not directly use the raw `.ply` files under the training output directory for online visualization.
 After training, you should fuse the model first, then visualize the fused file.
 
+Pre-built fused PLY files for all scenes are also available for direct download from Hugging Face:
+
+[Download fused PLY from Hugging Face 🤗](https://huggingface.co/jayinnn/Skyfall-GS-ply)
+
 1.  **Generate a fused PLY file from a trained model:**
 
     ```bash
@@ -233,7 +239,9 @@ The `eval.py` script is used for evaluating the performance of a trained model. 
 
 ### Downloading Evaluation Data
 
-The evaluation data, which includes the ground truth videos and the rendered videos from other methods, can be downloaded from Google Drive.
+The evaluation data, which includes the ground truth videos and the rendered videos from other methods, can be downloaded from Hugging Face or Google Drive.
+
+[Download from Hugging Face 🤗](https://huggingface.co/datasets/jayinnn/Skyfall-GS-eval) *(recommended)*
 
 [Download from Google Drive](https://drive.google.com/drive/folders/1hSFe9yGOwJCLBK7ZLHB-49_x73Ebk_VV?usp=drive_link)
 
