@@ -256,6 +256,9 @@ class GaussianModel:
         print("Computing 3D filter")
         #TODO consider focal length and image width
         xyz = self.get_xyz.double()
+        if xyz.shape[0] == 0:
+            self.filter_3D = torch.zeros((0, 1), device=xyz.device, dtype=torch.float32)
+            return
         # create a copy of xyz to store the distance
         distance = torch.ones((xyz.shape[0]), device=xyz.device, dtype=torch.float64) * 1e8
         valid_points = torch.zeros((xyz.shape[0]), device=xyz.device, dtype=torch.bool)
@@ -298,8 +301,13 @@ class GaussianModel:
             if focal_length < camera.focal_x:
                 focal_length = camera.focal_x
         
-        distance[~valid_points] = distance[valid_points].max()
-        
+        if valid_points.any():
+            distance[~valid_points] = distance[valid_points].max()
+        # else: no point projects into any view; keep distance at 1e8 (already set)
+
+        if focal_length <= 0:
+            focal_length = 1.0
+
         #TODO remove hard coded value
         #TODO box to gaussian transform
         filter_3D = distance / focal_length * (0.2 ** 0.5)

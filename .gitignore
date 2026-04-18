@@ -6,10 +6,22 @@ data/datasets_NYC/*
 results_eval/data_eval_JAX/*
 results_eval/data_eval_NYC/*
 
-outputs
+# Training / fusion outputs (large)
+outputs/
+fused/
 temp_frames*
-fused
 depth_tmp
+
+# Checkpoints & heavy weights (keep out of git; use releases or cloud storage)
+*.pth
+*.pt
+chkpnt*.pth
+
+# Local captured scenes (images, masks, transforms, COLMAP-style exports)
+data/my_scene/
+
+# IDE / agent working files
+.claude/
 
 diff_rasterization/diff_rast.egg-info
 diff_rasterization/dist
