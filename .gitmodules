@@ -6,10 +6,10 @@
 	url = https://github.com/weizenyang/MoGe.git
 [submodule "submodules/fused-ssim"]
 	path = submodules/fused-ssim
-	url = https://github.com/weizenyang/fused-ssim.git
+	url = https://github.com/rahul-goel/fused-ssim.git
 [submodule "submodules/FlowEdit"]
 	path = submodules/FlowEdit
-	url = https://github.com/weizenyang/FlowEdit.git
+	url = https://github.com/jayin92/FlowEdit.git
 [submodule "submodules/simple-knn"]
 	path = submodules/simple-knn
-	url = https://github.com/weizenyang/simple-knn.git
+	url = https://github.com/camenduru/simple-knn.git
